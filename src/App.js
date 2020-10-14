@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 // import Connect from './Connect';
 import Entrys from './Entrys';
+// import Services from './Services';
 import Footer from './Footer';
 import './App.css';
 

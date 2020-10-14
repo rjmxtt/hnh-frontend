@@ -49,7 +49,7 @@ li a:hover {
 
 .connect {  
   position: fixed;
-  margin: 40% 0 40% 0;
+  margin: 15rem 0 0 0;
   z-index: 9;
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
@@ -368,7 +368,31 @@ background: linear-gradient(0deg, rgba(69,221,47,1) 0%, rgba(233,230,51,1) 50%, 
 /* --- /// --- */
 
 
+/* --- SERVICES --- */
 
+.services {
+  color:blue;
+}
+
+#services-title {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#services-list {
+  display: inline;
+  position: relative;
+  top: none;
+}
+
+#services-list li {
+  float: none;
+  list-style: none;
+}
+
+
+/* --- /// --- */
  
 
 /* --- footer --- */
