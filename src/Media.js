@@ -1,10 +1,45 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import {Image} from 'cloudinary-react'; 
 import ReactPlayer from 'react-player';
+import { Transformation } from 'cloudinary-core';
+
+// const mediaReducer = (state, action) => {
+//     switch (action.type) {
+//       case 'FETCH_MEDIA_START':
+//         return {
+//           ...state,
+//           isLoaded: false
+//         };
+//       case 'FETCH_MEDIA_SUCCESS':
+//         return {
+//           ...state,
+//           isLoaded: true,
+//           media: action.payload
+//         };
+//       default:
+//         throw new Error();
+//     }  
+// }
 
 const Media = ({payload, id}) => {
+    // const [comSpecMedia, despatchComSpecMedia] = useReducer(
+    //     mediaReducer,
+    //     {media: /*reference to loading*/{}, isLoaded: false}
+    // );
+
+    // useEffect(() => {
+    //     despatchComSpecMedia({type: 'FETCH_ENTRY_START'})
+    //     axios.get('/entrys')
+    //     .then(res => {
+    //         dispatchEntrys({
+    //             type: 'FETCH_ENTRY_SUCCESS',
+    //             payload: res.data.results
+    //         })
+    //     }) 
+    // }, []);
+
     const data = payload.filter(elem => elem.id === id)
-    const lenght = data.length;
+    const length = data.length;
     const Dis = () => {
         return data.map(elem => 
             elem.media_type === 'yt' ?
@@ -23,7 +58,7 @@ const Media = ({payload, id}) => {
                 width="100%"
                 height="100%"
                 url={elem.media_path}
-                autoplay={true}
+                autoPlay={true}
                 muted={true}
                 playsinline={true}
                 playing={true} 
@@ -35,9 +70,12 @@ const Media = ({payload, id}) => {
             :
             <Image cloudName="den9a6b4z" 
                 publicId={elem.media_path+'.'+elem.media_type} 
-                class={'media-element-length-'+lenght} 
+                // publicId={elem.media_path+'.wdp'}
+                class={'media-element-length-'+length} 
                 id={'n'+elem.inner_order}
-            />
+            >
+                <Transformation flags="progressive:steep" quality="auto:best" />
+            </Image>
         )
     }
 

@@ -18,7 +18,7 @@ const entrysReducer = (state, action) => {
         };
       default:
         throw new Error();
-    } 
+    }  
 }
 
 const Entrys = () => {
