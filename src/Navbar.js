@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Connect from './Connect';
 import axios from 'axios';
+import { set } from 'lodash';
 
 const Navbar = () => {
     const [siteData, setSiteData] = useState({})
@@ -11,9 +12,10 @@ const Navbar = () => {
         .then(res => setSiteData(res.data.results[0]))
     }, [])
 
-    const showConnectHandler = () => {setShowConnect(true);}
-    const hideConnectHandler = () => {setShowConnect(false);}
-    
+    const connectHandler = () => {
+        if (showConnect) {setShowConnect(false)} else {setShowConnect(true)} 
+    }
+
     return (
         <div class="navbar">
             <ul>
@@ -22,14 +24,14 @@ const Navbar = () => {
                 
                 <div>{siteData.connect ? 
                     <li class="right">
-                        <a href="#" onClick={showConnectHandler}>connect</a>
+                        <a href="#" onClick={connectHandler}>connect</a>
                     </li>
                     : 
                     <a></a>}
                 </div>
             </ul>
             <div class='connect-wrapper'>{showConnect ? 
-                <Connect handler={hideConnectHandler}/>
+                <Connect handler={connectHandler}/> 
                 :
                 <div class='empty-div'></div>}
             </div>

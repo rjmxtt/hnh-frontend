@@ -72,8 +72,8 @@ input[type=text], textarea {
 }
 
 .connect button {
-  /* width: 25%; */
-  /* margin: 0.2rem 1rem; */
+  width: 25%;
+  margin: 0.2rem 1rem;
   border: 0;
   background-color: rgba(0,0,0,0);
   padding: 2px;

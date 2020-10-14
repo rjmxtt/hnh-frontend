@@ -12,7 +12,6 @@ function App() {
 
       <Navbar/>
       <Hero/>
-      {/* <Connect show={false}/> */}
       <Entrys/> 
       <Footer/>
 
