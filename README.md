@@ -1,3 +1,3 @@
-V1 Headnhands site frontend source.
-Full site available at 'https://www.headnhands.co.uk' 
-01.10.20
+V1.1 Headnhands Site Frontend Source.
+Site available at 'https://headnhands.co.uk' 
+24.10.20
